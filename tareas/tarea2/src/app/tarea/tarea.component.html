@@ -1,0 +1,14 @@
+<input
+    type="text"
+    class='form-control'
+    [(ngModel)]='username'
+>
+<p>{{ username }}</p>
+
+<input
+    type = "button"
+    value = "Reset"
+    class = "btn btn-primary"
+    [disabled] = '!allowReset'
+    (click) = 'resetUsername()'
+>

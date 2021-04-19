@@ -1,0 +1,5 @@
+# /curso/node_modules
+# /tareas/tarea1/node_modules
+# /tareas/tarea2/node_modules
+
+node_modules*
