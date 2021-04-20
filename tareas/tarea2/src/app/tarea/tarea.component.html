@@ -2,8 +2,10 @@
     type="text"
     class='form-control'
     [(ngModel)]='username'
+    (input)='onUpdateUsername($event)'
 >
 <p>{{ username }}</p>
+<p>{{ allowReset }}</p>
 
 <input
     type = "button"

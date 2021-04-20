@@ -5,9 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './tarea.component.html',
   styleUrls: ['./tarea.component.css']
 })
+
 export class TareaComponent implements OnInit {
-  username = 'Juan';
-  allowReset = false;
+  username: string = '';
+  allowReset = this.username !== ''
 
   constructor() { }
 
@@ -15,17 +16,15 @@ export class TareaComponent implements OnInit {
   }
 
   onUpdateUsername(event: Event){
+    this.allowReset = this.username !== '';
     this.username = (<HTMLInputElement>event.target).value;
     // this.allowReset = (<HTMLInputElement>event.target).value !== '';
-    if ( (<HTMLInputElement>event.target).value === '') {
-      this.allowReset = false;
-    } else {
-      this.allowReset = true;
-    }
+    console.log(this.allowReset);
   }
 
   resetUsername(){
     this.username = '';
+    this.allowReset = false;
   }
 
 }
