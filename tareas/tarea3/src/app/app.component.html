@@ -18,7 +18,13 @@
       <p *ngIf="display">Secret Password = tuna</p>
       <hr>
       <ol>
-        <li *ngFor="let click of clicks">{{ click }}</li>
+        <li
+          *ngFor="let click of clicks"
+          [ngStyle]="{backgroundColor: getColor(click[0])['fondo']}"
+          [ngClass]="{fondo: (click[0])['letra']}"
+        >
+          {{ click[1] }}
+        </li>
       </ol>
     </div>
   </div>
