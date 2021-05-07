@@ -17,7 +17,7 @@ export class AppComponent {
   nClicks = 1;
 
   onButtonPress() {
-    this.display=!this.display;z
+    this.display=!this.display;
     this.clicks.push([ this.nClicks, 'Click - ' + this.nClicks + ' - ' + new Date()]);
     this.nClicks++;
     // console.log(this.clicks);
