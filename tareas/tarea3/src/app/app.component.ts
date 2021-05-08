@@ -6,7 +6,7 @@ import { withLatestFrom } from 'rxjs-compat/operator/withLatestFrom';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   styles: [`
-      .fondo {
+      .clicks {
         color: white;
       }
   `]
@@ -14,20 +14,18 @@ import { withLatestFrom } from 'rxjs-compat/operator/withLatestFrom';
 export class AppComponent {
   display = false;
   clicks = [];
-  nClicks = 1;
 
   onButtonPress() {
     this.display=!this.display;
-    this.clicks.push([ this.nClicks, 'Click - ' + this.nClicks + ' - ' + new Date()]);
-    this.nClicks++;
+    this.clicks.push([ this.clicks.length+1, 'Click - ' + this.clicks.length + ' - ' + new Date()]);
     // console.log(this.clicks);
   }
 
-  getColor(numero) {
-    let color: Array<String>;
-    color['fondo'] = numero > 5 ? 'blue' : 'white';
-    color['letra'] = numero > 5 ? 'white' : 'black';
-    console.log(color);
-    return color;
-  }
+  // getColor(numero) {
+  //   let color: Array<String>;
+  //   color['fondo'] = numero >= 5 ? 'blue' : 'white';
+  //   color['letra'] = numero > 5 ? 'white' : 'black';
+  //   console.log(color);
+  //   return color;
+  // }
 }

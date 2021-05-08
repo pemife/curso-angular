@@ -19,9 +19,9 @@
       <hr>
       <ol>
         <li
-          *ngFor="let click of clicks"
-          [ngStyle]="{backgroundColor: getColor(click[0])['fondo']}"
-          [ngClass]="{fondo: (click[0])['letra']}"
+          *ngFor="let click of clicks; let i = index"
+          [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : white}"
+          [ngClass]="{clicks: i >= 5}"
         >
           {{ click[1] }}
         </li>
